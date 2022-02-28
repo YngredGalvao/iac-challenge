@@ -11,4 +11,5 @@ IaC Challenge for Cocus.
 | [ec2.tf](ec2.tf)  | ec2 instances  |
 | [variables.tf](variables.tf) | variables to be used within the module | 
 | [output.tf](output.tf) | outputs config |
+| [locals.tf](locals.tf) | locals for Security groups protocols, CIDR and port |
 
