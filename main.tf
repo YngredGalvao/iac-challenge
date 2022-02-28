@@ -11,8 +11,6 @@ terraform {
 
 provider "aws" {
   region = "eu-central-1"
-  shared_credentials_file = "~/.aws/credentials"
-  profile                 = "vscode"
   default_tags {
     tags = {
       environment = "Dev"
