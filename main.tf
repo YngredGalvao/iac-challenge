@@ -10,7 +10,9 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-central-1"
+  region = "us-east-2"
+  access_key = "AKIAXR6MQET5H7C4SAHK"
+  secret_key = "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"
   default_tags {
     tags = {
       environment = "Dev"
