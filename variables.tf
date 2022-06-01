@@ -1,36 +1,44 @@
-#variable for name of the resources based on privacy
-locals {
-  public  = "public"
-  private = "private"
+variable "module" {
+  description = "The terraform module used to deploy"
+  type        = string
 }
 
-#variable for name of the resources
-variable "name" {
-  default = "awslab"
+variable "region" {
+  description = "aws region to deploy to"
+  type        = string
 }
 
-#variable for CIDR block 
-variable "vpc_cidr_block" {
-  default = "172.16.0.0/16"
+variable "platform_name" {
+  description = "The name of the platform"
+  type = string
 }
 
-#variable for CIDR block of the public subnet
-variable "public_subnet_cidr_block" {
-  default = "172.16.1.0/24"
+variable "environment" {
+  description = "Applicaiton environment"
+  type = string
 }
 
-#variable for CIDR block of the private subnet
-variable "private_subnet_cidr_block" {
-  default = "172.16.2.0/24"
+variable "app_port" {
+  description = "Application port"
+  type = number
 }
 
-#variable for AMI iD
-
-variable "ami_id" {
-  default = "ami-0eb7496c2e0403237"
+variable "app_image" {
+  type = string 
+  description = "Container image to be used for application in task definition file"
 }
 
-#variable for the availability zone
-variable "availability_zone" {
-  default = "eu-central-1a"
+variable "availability_zones" {
+  type  = list(string)
+  description = "List of availability zones for the selected region"
+}
+
+variable "app_count" {
+  type = string 
+  description = "The number of instances of the task definition to place and keep running."
+}
+
+variable "main_pvt_route_table_id" {
+  type        = string
+  description = "Main route table id"
 }
